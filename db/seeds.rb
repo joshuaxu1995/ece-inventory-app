@@ -19,3 +19,5 @@ Tag.create([{ name: 'rich'}])
 Tag.create([{ name: 'broke'}])
 
 Tag.create([{ name: '110'}])
+
+Tag.create([{ name: '115asdfasdfwe4s'}])

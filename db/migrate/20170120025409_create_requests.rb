@@ -1,6 +1,6 @@
 class CreateRequests < ActiveRecord::Migration[5.0]
     def change
-        create_table :requests do |t|
+        create_table :requests, id: false do |t|
             t.integer :req_id
             t.time :datetime
             t.string :user
@@ -12,5 +12,6 @@ class CreateRequests < ActiveRecord::Migration[5.0]
             t.json 'instances'
             t.timestamps
         end
+        execute "ALTER TABLE requests ADD PRIMARY KEY (req_id);"
     end
 end

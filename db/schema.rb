@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 20170120033308) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "items", force: :cascade do |t|
-    t.string  "unique_name"
+  create_table "items", primary_key: "unique_name", id: :string, force: :cascade do |t|
     t.integer "quantity"
     t.integer "model_number"
     t.string  "description"
@@ -24,8 +23,7 @@ ActiveRecord::Schema.define(version: 20170120033308) do
     t.json    "instances"
   end
 
-  create_table "requests", force: :cascade do |t|
-    t.integer  "req_id"
+  create_table "requests", primary_key: "req_id", id: :integer, force: :cascade do |t|
     t.time     "datetime"
     t.string   "user"
     t.string   "item"
@@ -38,14 +36,12 @@ ActiveRecord::Schema.define(version: 20170120033308) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "name"
+  create_table "tags", primary_key: "name", id: :string, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
+  create_table "users", primary_key: "username", id: :string, force: :cascade do |t|
     t.string   "privilege"
     t.string   "password"
     t.datetime "created_at", null: false
