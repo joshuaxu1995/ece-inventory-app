@@ -75,9 +75,7 @@ class RequestsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   
- 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
@@ -88,4 +86,5 @@ class RequestsController < ApplicationController
     def request_params
       params.fetch(:request, {}).permit(:datetime, :user, :item_id, :quantity, :reason, :status, :request_type, :instances)
     end
+
 end
