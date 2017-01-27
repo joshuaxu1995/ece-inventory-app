@@ -38,7 +38,6 @@ class RequestsController < ApplicationController
     # Set default values for requests:
     @request.user = @user.username
     @request.datetime = Time.now
-    @request.status = "outstanding"
     # @request.request_type = ??? what is this?
 
 

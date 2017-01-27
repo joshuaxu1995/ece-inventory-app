@@ -32,6 +32,11 @@
     <%= f.text_area :reason, :required => true %>
   </p>
 
+  <p>
+    <%= f.label :status %><br>
+    <%= f.select :status, Request.statuses.keys %>
+  </p>
+
   <%= f.hidden_field :item_id, :value => @item.id %>
 
   <div class="actions">
