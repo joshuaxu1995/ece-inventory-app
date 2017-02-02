@@ -12,4 +12,12 @@ class Item < ApplicationRecord
   #has_and_belongs_to_many :tags
   # accepts_nested_attributes_for :tags
 
+  def self.search(search)
+  	if search
+  		self.where('name LIKE?', "%#{search}%")
+  	else
+  		self.all
+  	end
+  end
+
 end

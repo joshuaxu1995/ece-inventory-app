@@ -6,7 +6,10 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.order('unique_name ASC').paginate(page: params[:page], per_page: 10)
+    @items = Item.search(params[:search]).order('unique_name ASC').paginate(page: params[:page], per_page: 10)
+    # @items = Item.paginate(page: params[:page], per_page: 10)
+    # if params[:search]
+    # end
   end
 
 
