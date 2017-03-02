@@ -12,9 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require jquery.turbolinks
+//= require best_in_place
 //= require turbolinks
-//= require react
-//= require react_ujs
-//= require components
+//= require turbolinks-compatibility
+//= require bootstrap-sprockets
+//= require bootstrap3-editable/bootstrap-editable
 //= require_tree .
+//= require bootstrap-tagsinput
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+
+$(document).on('ready page:load', function () {
+    /* Activating Best In Place */
+    $(".best_in_place").best_in_place();
+});
